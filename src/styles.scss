@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url('./assets/image/background-waves-min.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 90%;
+    max-width: 1024px;
+    height: 80vh;
+    display: flex;
+    overflow: hidden;
+
+    backdrop-filter: blur(23px) saturate(200%);
+    -webkit-backdrop-filter: blur(23px) saturate(200%);
+    background-color: rgba(17, 25, 40, 0.46);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+
+    &__side-menu {
+        width: 20%;
+        padding: 50px 10px;
+        border-right: 1px solid rgb(255 255 255 / 13%);
+        // background-color: orange;
+    }
+
+    &__content {
+        width: 80%;
+        padding: 25px 0px 0px 0px;
+        // background-color: blue;
+    }
+}
+
+.menu {
+    &__item {
+        color: white;
+        padding: 10px 30px;
+        font-size: 14px;
+        border-radius: 10px;
+        cursor: pointer;
+
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-start;
+
+        transition: all .2s;
+
+        &:hover {
+            transition: all .2s;
+            background-color: rgb(38 38 38 / 15%);
+        }
+
+        &--selected {
+            background-color: rgb(38 38 38 / 15%);
+        }
+    }
+
+    &__item-icon {
+        margin-right: 5px;
+        font-size: 20px;
+    }
+}
+
+.start {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+
+    &__card {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgb(82 82 82 / 23%);
+        max-width: 240px;
+        max-height: 170px;
+        text-align: center;
+        transition: .3s ease-out;
+
+        &:hover {
+            transition: .3s ease-in;
+            background-color: rgb(187 187 187 / 38%);
+        }
+    }
+
+    &__card-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #000000b8;
+    }
+
+    &__card-text {
+        font-size: 11px;
+        color: #000000ba;
+        margin: 10px;
+    }
+    
+    &__card-button {
+        border: none;
+        padding: 10px 70px;
+        border-radius: 5px;
+        background-color: rgb(255 139 47 / 67%);
+        font-size: 14px;
+        color: white;
+        letter-spacing: .5px;
+        cursor: pointer;
+    }
+}
+
+.general {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    &__menu {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    &__menu-item {
+        color: #d9d9d9;
+        cursor: pointer;
+        padding: 10px;
+        border-bottom: 2px solid transparent;
+        transition: 0.3s;
+
+        &:hover {
+            color: white;
+            border-bottom: 2px solid white;
+        }
+
+        &--selected {
+            color: white;
+            border-bottom: 2px solid white;
+        }
+    }
+
+    &__user-icon {
+        font-size: 40px;
+    }
+
+    &__informations {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgb(82 82 82 / 23%);
+    }
+
+    &__content {
+        height: 100%;
+        width: 100%;
+    }
+
+    &__divider {
+        margin: 10px;
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    &__user-item {
+        padding: 20px;
+
+
+        &:hover {
+            transition: .3s;
+            background-color: rgba(255, 255, 255, 0.13);
+        }
+    }
+
+    &__item-title {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    &__item-value {
+        font-weight: 400;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+}
+
+.transactions {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__cards-container {
+        position: relative;
+        height: 50%;
+    }
+
+    &__content {
+        width: 100%;
+        height: 50%;
+    }
+
+    &__items-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__items-group {
+        width: 100%;
+        padding-top: 30px;
+        background-color: rgb(82 82 82 / 23%);
+        transition: .3s ease-out;
+
+        &:hover {
+            transition: .3s ease-in;
+            background-color: rgb(187 187 187 / 38%);
+        }
+    }
+
+    &__item {
+        padding: 0px 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        color: white;
+    }
+
+    &__item-info {
+        width: 30%;
+
+        &--left {
+            text-align: left;
+        }
+
+        &--center {
+            text-align: center;
+        }
+
+        &--right {
+            text-align: right;
+        }
+    }
+
+    &__item-dot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+
+        &--red {
+            background-color: #ff5252;
+        }
+
+        &--green {
+            background-color: #52ff69;
+        }
+    }
+
+    &__divider {
+        margin: 10px 0px;
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .card-group-left {
+        position: absolute;
+        top: 42px;
+        left: 11%;
+        transform: rotate(350deg);
+        z-index: 0;
+
+        &--selected {
+            z-index: 1;
+        }
+    }
+
+    .card-group-right {
+        position: absolute;
+        top: 42px;
+        right: 20%;
+        transform: rotate(350deg);
+        z-index: 0;
+
+        &--selected {
+            z-index: 1;
+        }
+    }
+      
+    .card {
+        position: relative;
+        height: 210px;
+        width: 330px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(30px);
+        box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        cursor: pointer;
+
+        &--credit {
+            background-image: linear-gradient(109.6deg, rgb(62 161 219 / 65%) 11.2%, rgb(93 52 236 / 65%) 100.2%);
+        }
+
+        &--debit {
+            background-image: linear-gradient(109.6deg, rgb(25 24 25 / 65%) 11.2%, rgb(221 219 231 / 65%) 100.2%);
+        }
+    }
+      
+    .logo img,
+    .chip img,
+    .number,
+    .name,
+    .from,
+    .to,
+    .ring {
+        position: absolute; /* All items inside card should have absolute position */
+    }
+      
+    .logo img {
+        top: 30px;
+        right: 40px;
+        width: 80px;
+        height: auto;
+        opacity: 0.8;
+    }
+      
+    .chip img {
+        top: 70px;
+        left: 40px;
+        width: 50px;
+        height: auto;
+        opacity: 0.8;
+    }
+      
+    .number,
+    .name,
+    .from,
+    .to {
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 400;
+        letter-spacing: 2px;
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+    }
+      
+    .number {
+        left: 40px;
+        bottom: 65px;
+        font-family: "Nunito", sans-serif;
+    }
+      
+    .name {
+        font-size: 0.5rem;
+        left: 40px;
+        bottom: 35px;
+    }
+      
+    .from {
+        font-size: 0.5rem;
+        bottom: 35px;
+        right: 110px;
+    }
+      
+    .to {
+        font-size: 0.5rem;
+        bottom: 35px;
+        right: 40px;
+    }
+      
+      /* The two rings on the card background */
+    .ring {
+        height: 500px;
+        width: 500px;
+        border-radius: 50%;
+        background: transparent;
+        border: 50px solid rgba(255, 255, 255, 0.1);
+        bottom: -250px;
+        right: -250px;
+        box-sizing: border-box;
+    }
+      
+    .ring::after {
+        content: "";
+        position: absolute;
+        height: 600px;
+        width: 600px;
+        border-radius: 50%;
+        background: transparent;
+        border: 30px solid rgba(255, 255, 255, 0.1);
+        bottom: -80px;
+        right: -110px;
+        box-sizing: border-box;
+    }
+}
+
+.not-found {
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-image: linear-gradient(rgb(15 22 36 / 53%), #2a1f6fbd, #ae3082cc);    -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 100px;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__code {
+        font-size: 200px;
+        background-image: linear-gradient(45deg, #6d357c, #422ea7);
+        background-clip: text;
+        color: transparent;
+    }
+
+    &__message {
+        background-image: linear-gradient(45deg, #928fab, #a972ff);
+        background-clip: text;
+        color: transparent;
+    }
+
+    &__button {
+        margin-top: 40px;
+        border: none;
+        padding: 10px 70px;
+        border-radius: 5px;
+        background-color: rgb(255 139 47 / 67%);
+        font-size: 14px;
+        color: white;
+        letter-spacing: .5px;
+        cursor: pointer;
+    }
+}
